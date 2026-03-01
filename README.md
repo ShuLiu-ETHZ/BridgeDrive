@@ -197,7 +197,7 @@ BridgeDrive cannot handle imperfect timing of lane-changing, which resulted from
 <div align="center">
   <table>
     <tr>
-      <th width="400">Temporal waypoints</th>
+      <th width="400">Limitation of BridgeDrive</th>
     </tr>
     <tr>
       <td align="center">
