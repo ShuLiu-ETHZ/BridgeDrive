@@ -1,5 +1,5 @@
 <div align="center">
-<!-- <img src="assets/the_last_freedom.png" width="90"> -->
+<!-- <img src="assets/the_last_freedom.png" width="75"> -->
 
 [![teaser](assets/the_last_freedom.png)](https://space.bilibili.com/1745143606?spm_id_from=333.788.upinfo.detail.click)
 
@@ -10,8 +10,8 @@
 
 Bosch (China) Investment Co., Ltd.
 
-(<sup>*</sup>) equal contribution
-(<sup>:email:</sup>) corresponding author, shu.liu2@cn.bosch.com
+(<sup>*</sup>) equal contribution,
+(<sup>:email:</sup>) corresponding author: shu.liu2@cn.bosch.com
 
 Accepted to ICLR 2026!
 
