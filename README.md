@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/7ec0ebf3-5b4b-4ece-a0f2-296913e40287
 <div align="center">
 <!-- <img src="assets/the_last_freedom.png" width="90"> -->
 
@@ -138,17 +136,15 @@ diffusion parameters, learning rate, training duration, and the speed control me
 
 
 
-https://github.com/user-attachments/assets/0e2fe519-a7e7-482c-a013-fdb4641b9801  figure 3
+<!--https://github.com/user-attachments/assets/0e2fe519-a7e7-482c-a013-fdb4641b9801  figure 3
 https://github.com/user-attachments/assets/361bf92e-bd7f-4cf4-aeb6-91963801832c  figure 4
 https://github.com/user-attachments/assets/6c0b5182-c820-41b4-9db4-7febfc9a0bf8  figure 5
 https://github.com/user-attachments/assets/35f40c6d-dcf5-4e27-8d16-38a1fb604a4a  figure 6
-https://github.com/user-attachments/assets/98f612ba-a45f-472b-b4e0-f5054c155dd2  figure 7
+https://github.com/user-attachments/assets/98f612ba-a45f-472b-b4e0-f5054c155dd2  figure 7 -->
 
 
 
-
-
-Temporal waypoints exhibited deficiencies in overtaking maneuver coordination and speed control, which directly led to a collision with the white vehicle. In comparison, geometric waypoints adapted its planning to overtake a sequence of parked cars. 
+Temporal waypoints exhibited deficiencies in overtaking manoeuvre coordination and speed control, which directly led to a collision with the white vehicle. In comparison, geometric waypoints adapted its planning to overtake a sequence of parked cars. 
 
 <div align="center">
   <table>
