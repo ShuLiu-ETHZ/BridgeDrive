@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/7ec0ebf3-5b4b-4ece-a0f2-296913e40287
 <div align="center">
 <!-- <img src="assets/the_last_freedom.png" width="90"> -->
 
@@ -82,20 +84,6 @@ The key algorithmic difference between BridgeDrive and DiffusionDrive is highlig
 
 ## Quantitative Results on PDM-Lite and LEAD datasets
 
-<!-- 
-| Method | Expert | VLA | Diffusion | DS | SR(%) |
-|--------|--------|-----|-----------|----|--------|
-| TCP-traj* (Wu et al., 2022) | Think2Drive |  <span style="color:red">✗</span>  |  <span style="color:red">✗</span>  | 59.90 | 30.00 |
-| UniAD-Base (Hu et al., 2023) | Think2Drive |  <span style="color:red">✗</span>  |  <span style="color:red">✗</span>  | 45.81 | 16.36 |
-| VAD (Jiang et al., 2023) | Think2Drive | <span style="color:red">✗</span> | <span style="color:red">✗</span> | 42.35 | 15.00 |
-| DriveTransformer (Jia et al., 2025) | Think2Drive | <span style="color:red">✗</span> | <span style="color:red">✗</span> | 63.46 | 35.01 |
-| ORION (Fu et al., 2025) | Think2Drive | <span style="color:green">✔</span> | <span style="color:red">✗</span> | 77.74 | 54.62 |
-| ORION diffusion (Fu et al., 2025) | Think2Drive | <span style="color:green">✔</span> | <span style="color:green">✔</span> | 71.97 | 46.54 |
-| DiffusionDrive$^{\text{temp}}$ (Liao et al., 2025) | PDM-Lite | <span style="color:red">✗</span> | <span style="color:green">✔</span> | 77.68 | 52.72 |
-| SimLingo (Renz et al., 2025) | PDM-Lite | <span style="color:green">✔</span> | <span style="color:red">✗</span> | 85.07 | 67.27 |
-| TransFuser++ (Zimmerlin et al., 2024) | PDM-Lite | <span style="color:red">✗</span> | <span style="color:red">✗</span> | 84.21 | 67.27 |
-| **<span style="color:lightblue">BridgeDrive (ours)</span>** | PDM-Lite | **<span style="color:red">✗</span>** | **<span style="color:green">✔</span>** | **87.99(+2.92)** | **74.99(+7.72)** | -->
-
 BridgeDrive, evaluated primarily on the PDM-Lite training dataset, achieves state-of-the-art performance on most metrics in the Bench2Drive benchmark.
 
 Comprehensive comparison between BridgeDrive and baselines. BridgeDrive prioritizes safety over Comfortness.
@@ -148,6 +136,18 @@ diffusion parameters, learning rate, training duration, and the speed control me
 
 ## Video Demo
 
+
+
+https://github.com/user-attachments/assets/0e2fe519-a7e7-482c-a013-fdb4641b9801  figure 3
+https://github.com/user-attachments/assets/361bf92e-bd7f-4cf4-aeb6-91963801832c  figure 4
+https://github.com/user-attachments/assets/6c0b5182-c820-41b4-9db4-7febfc9a0bf8  figure 5
+https://github.com/user-attachments/assets/35f40c6d-dcf5-4e27-8d16-38a1fb604a4a  figure 6
+https://github.com/user-attachments/assets/98f612ba-a45f-472b-b4e0-f5054c155dd2  figure 7
+
+
+
+
+
 Temporal waypoints exhibited deficiencies in overtaking maneuver coordination and speed control, which directly led to a collision with the white vehicle. In comparison, geometric waypoints adapted its planning to overtake a sequence of parked cars. 
 
 <div align="center">
@@ -158,11 +158,11 @@ Temporal waypoints exhibited deficiencies in overtaking maneuver coordination an
     </tr>
     <tr>
       <td align="center">
-        <video src="https://github.com/user-attachments/assets/bb8867cf-6825-4178-81b7-12face574fc5" controls width="300">
+        <video src="https://github.com/user-attachments/assets/0e2fe519-a7e7-482c-a013-fdb4641b9801" controls width="300">
         </video>
       </td>
       <td align="center">
-        <video src="https://github.com/user-attachments/assets/df8ea7e1-3791-4756-8945-0cba919217d1" controls width="300">
+        <video src="https://github.com/user-attachments/assets/361bf92e-bd7f-4cf4-aeb6-91963801832c" controls width="300">
         </video>
       </td>
     </tr>
@@ -181,11 +181,11 @@ Full Diffusion model, without prior guidance from anchor, failed to adhere to th
     </tr>
     <tr>
       <td>
-        <video src="https://github.com/user-attachments/assets/0815fba6-f651-4a60-a18c-1aa5998b7591" controls width="300">
+        <video src="https://github.com/user-attachments/assets/6c0b5182-c820-41b4-9db4-7febfc9a0bf8" controls width="300">
         </video>
       </td>
       <td>
-        <video src="https://github.com/user-attachments/assets/6cc78818-6565-4af4-ba72-9e029dc3f8b2" controls width="300">
+        <video src="https://github.com/user-attachments/assets/35f40c6d-dcf5-4e27-8d16-38a1fb604a4a" controls width="300">
         </video>
       </td>
     </tr>
@@ -205,50 +205,12 @@ BridgeDrive cannot handle imperfect timing of lane-changing, which resulted from
     </tr>
     <tr>
       <td align="center">
-        <video src="https://github.com/user-attachments/assets/7864038c-ee3c-45a2-a756-325bb7eac36d" controls width="300">
+        <video src="https://github.com/user-attachments/assets/98f612ba-a45f-472b-b4e0-f5054c155dd2" controls width="300">
         </video>
       </td>
     </tr>
   </table>
 </div>
-
-<!-- https://github.com/user-attachments/assets/bb8867cf-6825-4178-81b7-12face574fc5   figure3
-https://github.com/user-attachments/assets/df8ea7e1-3791-4756-8945-0cba919217d1  figure4
-https://github.com/user-attachments/assets/0815fba6-f651-4a60-a18c-1aa5998b7591 figure 5
-https://github.com/user-attachments/assets/6cc78818-6565-4af4-ba72-9e029dc3f8b2   figure6
-https://github.com/user-attachments/assets/7864038c-ee3c-45a2-a756-325bb7eac36d   figure7 -->
-
-<!-- 
-https://github.com/user-attachments/assets/d6caca67-703c-4a5e-a74d-576890d88bff figure3
-https://github.com/user-attachments/assets/1ea8e43d-2fcb-49fe-82b5-319fde1c1b5e figure4 -->
-<!-- https://github.com/user-attachments/assets/32777d48-481b-46fc-8756-e69d0245a178  figure 5
-https://github.com/user-attachments/assets/3e449b7e-a66b-48a8-8538-73ed516283fc figure 6 -->
-<!-- https://github.com/user-attachments/assets/d7d1b5c5-4653-4390-a753-b680ea9186fd figure 7 -->
-
-
-<!-- ## Getting Started
-
-- [Getting started from NAVSIM environment preparation](https://github.com/autonomousvision/navsim?tab=readme-ov-file#getting-started-)
-- [Preparation of DiffusionDrive environment](docs/install.md)
-- [Training and Evaluation](docs/train_eval.md) -->
-
-
-<!-- ## Checkpoint
-
-> Results on NAVSIM
-
-
-| Method | Model Size | Backbone | PDMS | Weight Download |
-| :---: | :---: | :---: | :---:  | :---: |
-| DiffusionDrive | 60M | [ResNet-34](https://huggingface.co/timm/resnet34.a1_in1k) | [88.1](https://github.com/hustvl/DiffusionDrive/releases/download/DiffusionDrive_88p1_PDMS_Eval_file/diffusiondrive_88p1_PDMS.csv) | [Hugging Face](https://huggingface.co/hustvl/DiffusionDrive) |
-
-> Results on nuScenes
-
-
-| Method | Backbone | Weight | Log | L2 (m) 1s | L2 (m) 2s | L2 (m) 3s | L2 (m) Avg | Col. (%) 1s | Col. (%) 2s | Col. (%) 3s | Col. (%) Avg |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---:| :---: | :---: | :---: | :---: | :---: |
-| DiffusionDrive | ResNet-50 | [HF](https://huggingface.co/hustvl/DiffusionDrive) | [Github](https://github.com/hustvl/DiffusionDrive/releases/download/DiffusionDrive_nuScenes/diffusiondrive_stage2.log.log) |  0.27 | 0.54  | 0.90 |0.57 | 0.03  | 0.05 | 0.16 | 0.08  | -->
-
 
 
 ## Contact
@@ -273,79 +235,4 @@ year={2026},
 url={https://arxiv.org/abs/2509.23589}
 }
 ```
-<!-- Please cite the following papers for the respective components of the repo:
 
-DiffusionDrive Method:
-```bibtex
- @article{diffusiondrive,
-  title={DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving},
-  author={Bencheng Liao and Shaoyu Chen and Haoran Yin and Bo Jiang and Cheng Wang and Sixu Yan and Xinbang Zhang and Xiangyu Li and Ying Zhang and Qian Zhang and Xinggang Wang},
-  booktitle    = {{IEEE/CVF} Conference on Computer Vision and Pattern Recognition,
-                  {CVPR} 2025, Nashville, TN, USA, June 11-15, 2025},
-  pages        = {12037--12047},
-  publisher    = {Computer Vision Foundation / {IEEE}},
-  year         = {2025},
-  url          = {https://openaccess.thecvf.com/content/CVPR2025/html/Liao\_DiffusionDrive\_Truncated\_Diffusion\_Model\_for\_End-to-End\_Autonomous\_Driving\_CVPR\_2025\_paper.html},
-  doi          = {10.1109/CVPR52734.2025.01124}
-}
-```
-
-TransFuser++ Method:
-```BibTeX
-@InProceedings{Jaeger2023ICCV,
-  title={Hidden Biases of End-to-End Driving Models},
-  author={Bernhard Jaeger and Kashyap Chitta and Andreas Geiger},
-  booktitle={Proc. of the IEEE International Conf. on Computer Vision (ICCV)},
-  year={2023}
-}
-```
-TransFuser++ Leaderboard 2.0 changes
-```BibTeX
-@article{Zimmerlin2024ArXiv,
-  title={Hidden Biases of End-to-End Driving Datasets},
-  author={Julian Zimmerlin and Jens Beißwenger and Bernhard Jaeger and Andreas Geiger and Kashyap Chitta},
-  journal={arXiv.org},
-  volume={2412.09602},
-  year={2024}
-}
-
-@mastersthesis{Zimmerlin2024thesis,
-  title={Tackling CARLA Leaderboard 2.0 with End-to-End Imitation Learning},
-  author={Julian Zimmerlin},
-  school={University of Tübingen},
-  howpublished={\textsc{url:}~\url{https://kashyap7x.github.io/assets/pdf/students/Zimmerlin2024.pdf}},
-  year={2024}
-}
-```
-
-PDM-Lite expert:
-```BibTeX
-@inproceedings{Sima2024ECCV,
-  title={DriveLM: Driving with Graph Visual Question Answering},
-  author={Chonghao Sima and Katrin Renz and Kashyap Chitta and Li Chen and Hanxue Zhang and Chengen Xie and Jens Beißwenger and Ping Luo and Andreas Geiger and Hongyang Li},
-  booktitle={Proc. of the European Conf. on Computer Vision (ECCV)},
-  year={2024}
-}
-```
-
-Bench2Drive benchmark:
-
-```BibTeX
-@inproceedings{Jia2024NeurIPS,
-  title={Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving},
-  author={Xiaosong Jia and Zhenjie Yang and Qifeng Li and Zhiyuan Zhang and Junchi Yan},
-  booktitle={NeurIPS 2024 Datasets and Benchmarks Track},
-  year={2024}
-}
-```
-
-LEAD expert and dataset:
-
-```bibtex
-@inproceedings{Nguyen2026CVPR,
-	author = {Long Nguyen and Micha Fauth and Bernhard Jaeger and Daniel Dauner and Maximilian Igl and Andreas Geiger and Kashyap Chitta},
-	title = {LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving},
-	booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year = {2026},
-}
-``` -->
