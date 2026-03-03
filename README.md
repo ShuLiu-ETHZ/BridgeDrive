@@ -15,11 +15,6 @@ Bosch (China) Investment Co., Ltd.
 
 Accepted to ICLR 2026!
 
-[![BridgeDrive](https://img.shields.io/badge/Paper-DiffusionDrive-2b9348.svg?logo=arXiv)](https://arxiv.org/abs/2509.23589)&nbsp;
-<!-- [![huggingface weights](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-DiffusionDrive-yellow)]()&nbsp; -->
-
-
-
 </div>
 
 ## News
