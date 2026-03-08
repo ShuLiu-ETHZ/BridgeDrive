@@ -112,14 +112,14 @@ LEAD (Nguyen et al., 2026), a recent work, minimizes the generalization gap in e
 
 | Method | Expert | DS | SR(%) | Effi. | Comfort |
 |--------|--------|-----|--------|--------|---------|
-| TFv6 (Nguyen et al., 2026) | LEAD | 95.2 ± 0.3 | **86.8** ± 0.7 | N/A | N/A |
+| TFv6 (Nguyen et al., 2026) | LEAD | 95.2 ± 0.3 | 86.8 ± 0.7 | N/A | N/A |
 | **<span style="color:lightblue">BridgeDrive</span>** | PDM-Lite | 87.99 ± 0.67 | 74.99 ± 1.35 | **236.49** ± 2.32 | 20.98 ± 0.74 |
-| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | **95.42** ± 1.45 | 86.06 ± 0.58 | 201.26 ± 3.25 | **22.61** ± 0.83 |
+| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | **96.34** ± 0.55 | **89.25** ± 0.50 | 202.92 ± 3.27 | **23.24** ± 1.06 |
 
 | Method |Expert | Merg. | Overtak. | Emer. Brake | Give Way | Traf. Sign | Mean |
 |--------|--------|--------|----------|-------------|----------|------------|------|
 | **<span style="color:lightblue">BridgeDrive</span>**| PDM-Lite |69.92 | 66.67 | 90.00 | 50.00 | 89.47 | 73.15 |
-| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | 76.25 | 93.34 | 94.17 | 50.00 | 92.63 | 81.28 |
+| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | 76.25 | 95.56 | 96.67 | 50.00 | 92.63 | 82.22 |
 
 BridgeDrive achieves performance comparable
 to LEAD. Notably, its success rate is 0.72% lower than that of LEAD, while its driving score is
