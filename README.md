@@ -18,6 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
+* **` Mar. 09th, 2026`:** We release the initial version of code, along with documentation and training/evaluation scripts. 
 * **` Jan. 26th, 2026`:** BridgeDrive is accepted to ICLR 2026!
 * **` Sep. 28th, 2025`:** We released our paper on [Arxiv](https://arxiv.org/abs/2509.23589). Code/Models are coming soon. Please stay tuned! ☕️
 
@@ -108,7 +109,7 @@ Multi-ability evaluation results on Bench2Drive. BridgeDrive outperforms all bas
 
 <br>
 
-LEAD (Nguyen et al., 2026), a recent work, minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. The tables below present a preliminary evaluation of BridgeDrive on this new training dataset.
+LEAD (Nguyen et al., 2026), a recent work, minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. The tables below present a preliminary evaluation of BridgeDrive on this new training dataset (as of 2026-03-07).
 
 | Method | Expert | DS | SR(%) | Effi. | Comfort |
 |--------|--------|-----|--------|--------|---------|
@@ -203,12 +204,72 @@ BridgeDrive cannot handle imperfect timing of lane-changing, which resulted from
   </table>
 </div>
 
+## Code
+BridgeDrive is developed mainly based on [Transfuser](https://github.com/autonomousvision/transfuser), [Carla Garage](https://github.com/autonomousvision/carla_garage), [DiffusionDrive](https://github.com/hustvl/DiffusionDrive), and [LEAD](https://github.com/autonomousvision/lead) (in chronological order). We provide an adapted version for LEAD, as BridgeDrive achieves its best performance within LEAD’s framework. When using our code, please remember to star, fork, and acknowledge the above-mentioned projects accordingly.
+
+### 1. Configuration
+
+Clone LEAD repository (`a41d11616d06843ba89388a278e6e025b6a47878`) to path_to_LEAD and follow their configuration steps.
+
+```bash
+git clone https://github.com/autonomousvision/lead.git
+```
+
+Clone the BridgeDrive repository to path_to_BridgeDrive
+
+```bash
+git clone https://github.com/shuliu-ETHZ/BridgeDrive.git
+cd BridgeDrive/BridgeDrive_adaptation_LEAD
+```
+
+The `BridgeDrive_adaptation_LEAD` folder mirrors the directory structure of LEAD. By transferring files via `utils_file_transfer.py`, you can integrate BridgeDrive into an existing LEAD repository in a **plug-and-play** manner:
+
+```bash
+# update source_folder and destination_folder in utils_file_transfer.py
+python utils_file_transfer.py
+```
+### 2. Data Preparation
+Before running BridgeDrive, ensure the following data and pretrained models are placed in the correct paths of your LEAD repository:
+
+#### 2.1 LEAD Datasets
+Download the official LEAD datasets and store them in:
+```bash
+# Replace `path_to_LEAD` with the actual path of your LEAD repository
+path_to_LEAD/data/carla_leaderboard2/data
+```
+
+#### 2.2 Pretrained Models
+Download the pretrained models by following the official instructions from the LEAD project, then place them in:
+```bash
+# Replace `path_to_LEAD` with the actual path of your LEAD repository
+path_to_LEAD/data/lead_ckpt/tfv6
+```
+
+### 3. Training
+```bash
+cd path_to_LEAD # with files from BridgeDrive
+./scripts/posttrain_bridgedrive.sh
+```
+
+### 4. Inference
+```bash
+cd path_to_LEAD
+./scripts/eval_bench2drive_bridgedrive.sh
+```
 
 ## Contact
 If you have any questions, please contact [Shu Liu](https://www.linkedin.com/in/liushu14/) via email (shu.liu2@cn.bosch.com).
 
 ## Acknowledgement
-BridgeDrive is greatly inspired by the following outstanding contributions to the open-source community: [DDBM](https://github.com/alexzhou907/DDBM), [DBIM](https://github.com/thu-ml/DiffusionBridge), [NAVSIM](https://github.com/autonomousvision/navsim), [Transfuser](https://github.com/autonomousvision/transfuser), [VAD](https://github.com/hustvl/VAD), [DiffusionDrive](https://github.com/hustvl/DiffusionDrive), [Carla Garage](https://github.com/autonomousvision/carla_garage), [LEAD](https://github.com/autonomousvision/lead), [Bench2Drive Leaderboard](https://github.com/autonomousvision/Bench2Drive-Leaderboard), [Bench2Drive](https://github.com/Thinklab-SJTU/Bench2Drive/), [PDM-Lite](https://github.com/OpenDriveLab/DriveLM/blob/DriveLM-CARLA/pdm_lite/docs/report.pdf), [leaderboard](https://github.com/carla-simulator/leaderboard), [scenario_runner](https://github.com/carla-simulator/scenario_runner)
+BridgeDrive is built upon the excellent work of the following open-source projects (in chronological order):
+- [Transfuser](https://github.com/autonomousvision/transfuser) (MIT License)
+- [Carla Garage](https://github.com/autonomousvision/carla_garage) (MIT License)
+- [DiffusionDrive](https://github.com/hustvl/DiffusionDrive) (MIT License)
+- [LEAD](https://github.com/autonomousvision/lead) (MIT License)
+
+We provide an adapted implementation for LEAD, as BridgeDrive achieves its best performance within LEAD's framework. When using this project, please comply with the license terms of the above projects and acknowledge them appropriately.
+
+BridgeDrive is also greatly inspired by the following outstanding contributions to the open-source community: [NAVSIM](https://github.com/autonomousvision/navsim), [VAD](https://github.com/hustvl/VAD), [Bench2Drive Leaderboard](https://github.com/autonomousvision/Bench2Drive-Leaderboard), [Bench2Drive](https://github.com/Thinklab-SJTU/Bench2Drive/), [PDM-Lite](https://github.com/OpenDriveLab/DriveLM/blob/DriveLM-CARLA/pdm_lite/docs/report.pdf), [leaderboard](https://github.com/carla-simulator/leaderboard), [scenario_runner](https://github.com/carla-simulator/scenario_runner)
 
 Please cite these works for the respective components of the repo.
 
