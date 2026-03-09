@@ -30,6 +30,13 @@ Accepted to ICLR 2026!
 - [Method](#method)
 - [Quantitative Results on PDM-Lite and LEAD datasets](#quantitative-results-on-pdm-lite-and-lead-datasets)
 - [Video Demo](#video-demo)
+- [Code](#code)
+  - [1. Configuration](#1-configuration)
+  - [2. Data Preparation](#2-data-preparation)
+    - [2.1 LEAD Datasets](#21-lead-datasets)
+    - [2.2 Pretrained Models](#22-pretrained-models)
+  - [3. Training](#3-training)
+  - [4. Inference](#4-inference)
 - [Contact](#contact)
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
@@ -130,8 +137,6 @@ diffusion parameters, learning rate, training duration, and the speed control me
 
 ## Video Demo
 
-
-
 <!--https://github.com/user-attachments/assets/0e2fe519-a7e7-482c-a013-fdb4641b9801  figure 3
 https://github.com/user-attachments/assets/361bf92e-bd7f-4cf4-aeb6-91963801832c  figure 4
 https://github.com/user-attachments/assets/6c0b5182-c820-41b4-9db4-7febfc9a0bf8  figure 5
@@ -205,6 +210,7 @@ BridgeDrive cannot handle imperfect timing of lane-changing, which resulted from
 </div>
 
 ## Code
+
 BridgeDrive is developed mainly based on [Transfuser](https://github.com/autonomousvision/transfuser), [Carla Garage](https://github.com/autonomousvision/carla_garage), [DiffusionDrive](https://github.com/hustvl/DiffusionDrive), and [LEAD](https://github.com/autonomousvision/lead) (in chronological order). We provide an adapted version for LEAD, as BridgeDrive achieves its best performance within LEAD’s framework. When using our code, please remember to star, fork, and acknowledge the above-mentioned projects accordingly.
 
 ### 1. Configuration
