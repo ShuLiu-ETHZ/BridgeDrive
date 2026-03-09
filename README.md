@@ -42,7 +42,7 @@ Accepted to ICLR 2026!
 - [Citation](#citation)
 
 ## Introduction
-Diffusion-based planners excel in autonomous driving by capturing multi-modal behaviors, but guiding them for safe, closed-loop planning remains challenging. Existing methods rely on anchor trajectories but suffer from a truncated diffusion process that breaks theoretical consistency. We introduce **BridgeDrive**, an anchor-guided diffusion bridge policy that directly transforms coarse anchors into refined plans while preserving consistency between forward and reverse processes. BridgeDrive supports efficient ODE solvers for real-time deployment and achieves state-of-the-art results on Bench2Drive, improving success rates by **7.72%** over prior methods.
+Diffusion-based planners excel in autonomous driving by capturing multi-modal behaviors, but guiding them for safe, closed-loop planning remains challenging. Existing methods rely on anchor trajectories but suffer from a truncated diffusion process that breaks theoretical consistency. We introduce **BridgeDrive**, an anchor-guided diffusion bridge policy that directly transforms coarse anchors into refined plans while preserving consistency between forward and reverse processes. BridgeDrive supports efficient ODE solvers for real-time deployment.  We achieve state-of-the-art performance on the Bench2Drive closed-loop evaluation benchmark, improving the success rate by **7.72%** and **2.45%** over prior arts with PDM-Lite and LEAD datasets, respectively.
 
 
 ## Method
