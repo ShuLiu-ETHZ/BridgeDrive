@@ -18,6 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
+* **` Mar. 24th, 2026`:** We release the BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive). 
 * **` Mar. 09th, 2026`:** We release the initial version of code, along with documentation and training/evaluation scripts. 
 * **` Jan. 26th, 2026`:** BridgeDrive is accepted to ICLR 2026!
 * **` Sep. 28th, 2025`:** We released our paper on [Arxiv](https://arxiv.org/abs/2509.23589). Code/Models are coming soon. Please stay tuned! ☕️
