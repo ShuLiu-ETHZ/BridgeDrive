@@ -8,7 +8,7 @@
 
 [Shu Liu](https://www.linkedin.com/in/liushu14/)<sup>* :email:</sup>, [Wenlin Chen](https://wenlin-chen.github.io/)<sup>* </sup>, Weihao Li <sup>* </sup>, [Zheng Wang](https://github.com/Wangzzzzzzzz)<sup>* </sup>, [Lijin Yang](https://scholar.google.com/citations?user=ppR-rpkAAAAJ&hl=en), Jianing Huang, Yipin Zhang, [Zhongzhan Huang](https://scholar.google.com/citations?user=R-b68CEAAAAJ&hl=zh-CN), [Ze Cheng](https://scholar.google.com/citations?user=lisP04YAAAAJ&hl=en), Hao Yang
 
-Bosch (China) Investment Co., Ltd.
+Bosch (China) Investment Co., Ltd. & Bosch Center for Artificial Intelligence
 
 (<sup>*</sup>) equal contribution,
 (<sup>:email:</sup>) corresponding author: shu.liu2@cn.bosch.com
