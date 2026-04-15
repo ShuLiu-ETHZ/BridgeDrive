@@ -18,6 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
+* **` Apr. 15th, 2026`:** We release the BridgeDrive's adaptation to DiffusionDrive, enabling training and testing on Navsim datasets. 
 * **` Mar. 24th, 2026`:** We release the BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive). 
 * **` Mar. 09th, 2026`:** We release the initial version of code, along with documentation and training/evaluation scripts. 
 * **` Jan. 26th, 2026`:** BridgeDrive is accepted to ICLR 2026!
@@ -210,11 +211,12 @@ BridgeDrive cannot handle imperfect timing of lane-changing, which resulted from
   </table>
 </div>
 
-## Code
+## Code 
 
 BridgeDrive is developed mainly based on [Transfuser](https://github.com/autonomousvision/transfuser), [Carla Garage](https://github.com/autonomousvision/carla_garage), [DiffusionDrive](https://github.com/hustvl/DiffusionDrive), and [LEAD](https://github.com/autonomousvision/lead) (in chronological order). We provide an adapted version for LEAD, as BridgeDrive achieves its best performance within LEAD’s framework. When using our code, please remember to star, fork, and acknowledge the above-mentioned projects accordingly.
 
-### 1. Configuration
+### BridgeDrive adaptation LEAD
+#### 1. Configuration
 
 Clone LEAD repository (`a41d11616d06843ba89388a278e6e025b6a47878`) to path_to_LEAD and follow their configuration steps.
 
@@ -235,34 +237,76 @@ The `BridgeDrive_adaptation_LEAD` folder mirrors the directory structure of LEAD
 # update source_folder and destination_folder in utils_file_transfer.py
 python utils_file_transfer.py
 ```
-### 2. Data Preparation
+#### 2. Data Preparation
 Before running BridgeDrive, ensure the following data and pretrained models are placed in the correct paths of your LEAD repository:
 
-#### 2.1 LEAD Datasets
+##### 2.1 LEAD Datasets
 Download the official LEAD datasets and store them in:
 ```bash
 # Replace `path_to_LEAD` with the actual path of your LEAD repository
 path_to_LEAD/data/carla_leaderboard2/data
 ```
 
-#### 2.2 Pretrained Models
+##### 2.2 Pretrained Models
 Download the pretrained models by following the official instructions from the LEAD project, then place them in:
 ```bash
 # Replace `path_to_LEAD` with the actual path of your LEAD repository
 path_to_LEAD/data/lead_ckpt/tfv6
 ```
 
-### 3. Training
+#### 3. Training
 ```bash
 cd path_to_LEAD # with files from BridgeDrive
 ./scripts/posttrain_bridgedrive.sh
 ```
 
-### 4. Inference
+#### 4. Inference
 ```bash
 cd path_to_LEAD
 ./scripts/eval_bench2drive_bridgedrive.sh
 ```
+
+### BridgeDrive adaptation DiffusionDrive
+
+
+#### 1. Configuration
+
+Clone DiffusionDrive repository and follow their configuration steps.
+
+```bash
+git clone https://github.com/hustvl/DiffusionDrive.git
+```
+
+Clone the BridgeDrive repository to path_to_BridgeDrive
+
+```bash
+git clone https://github.com/shuliu-ETHZ/BridgeDrive.git
+cd BridgeDrive/BridgeDrive_adaptation_DiffusionDrive
+```
+
+The `BridgeDrive_adaptation_DiffusionDrive` folder mirrors the directory structure of DiffusionDrive. By copying the content in `BridgeDrive_adaptation_DiffusionDrive` folder to `DiffusionDrive` folder, you can integrate BridgeDrive into an existing DiffusionDrive repository in a **plug-and-play** manner:
+
+#### 2. Data Preparation
+Before running BridgeDrive, ensure the following data and pretrained models are placed in the correct paths of your DiffusionDrive repository:
+
+##### 2.1 Navsim Datasets
+Download the official Navsim datasets as instructed in Diffusiondrive.
+
+##### 2.2 Pretrained Models
+Download the pretrained models instructed in Diffusiondrive.
+
+#### 3. Training
+```bash
+cd path_to_DiffusionDrive # with files from BridgeDrive
+./run_train_BridgeDrive_k80_beta10.sh
+```
+
+#### 4. Inference
+```bash
+cd path_to_DiffusionDrive
+./run_main_testing_BridgeDrive_k80_beta10
+```
+
 
 ## Contact
 If you have any questions, please contact [Shu Liu](https://www.linkedin.com/in/liushu14/) via email (shu.liu2@cn.bosch.com).

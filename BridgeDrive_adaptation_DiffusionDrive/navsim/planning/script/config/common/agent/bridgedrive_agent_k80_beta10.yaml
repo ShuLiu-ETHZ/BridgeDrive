@@ -1,0 +1,21 @@
+_target_: navsim.agents.diffusiondrive.transfuser_agent.TransfuserAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.diffusiondrive.transfuser_config.TransfuserConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+  use_scalar_norm: False
+  beta_d: 1.0
+  plan_anchor_path: /data/workspace/shuliu/DiffusionDrive/kmeans_navsim/navsim_anchor_k80.npy
+
+
+checkpoint_path: Null
+lr: 6e-4

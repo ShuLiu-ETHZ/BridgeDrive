@@ -1,0 +1,19 @@
+_target_: navsim.agents.diffusiondrive.transfuser_agent.TransfuserAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.diffusiondrive.transfuser_config.TransfuserConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+  use_scalar_norm: False
+  beta_d: 1.0
+
+checkpoint_path: /datashare/DiffusionDrive/exp/training_diffusiondrive_agent/2025.11.13.16.41.51/lightning_logs/version_0/checkpoints/epoch=21-step=3674.ckpt
+lr: 6e-4
