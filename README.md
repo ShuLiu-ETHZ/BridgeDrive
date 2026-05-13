@@ -62,6 +62,10 @@ BridgeDrive is further distinguished by its **theoretical rigor**, as it restore
 
 A conceptual comparison between a standard full diffusion model, DiffusionDrive, and BridgeDrive is illustrated below:
 
+<div align="center">
+<img src="assets/BridgeDrive_theory_concept.png" width="900">
+</div>
+
 - **Full diffusion model:**  
   `ground truth trajectory → (forward diffusion) Gaussian noise → (reverse denoising) ground truth trajectory`  
   <span style="color:green">✔</span> *Diffusion symmetry preserved!*
