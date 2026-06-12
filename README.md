@@ -18,6 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
+* **` Jun. 12th, 2026`:** We update the BridgeDrive's adaptation to LEAD, supporting [Fail2Drive](https://github.com/autonomousvision/fail2drive) benchmark, for details please refer to [evaluation](#fail2drive-evaluation).
 * **` Apr. 15th, 2026`:** We release the BridgeDrive's adaptation to DiffusionDrive, enabling training and testing on Navsim datasets. 
 * **` Mar. 24th, 2026`:** We release the BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive). 
 * **` Mar. 09th, 2026`:** We release the initial version of code, along with documentation and training/evaluation scripts. 
@@ -31,6 +32,7 @@ Accepted to ICLR 2026!
 - [Introduction](#introduction)
 - [Method](#method)
 - [Quantitative Results on PDM-Lite and LEAD datasets](#quantitative-results-on-pdm-lite-and-lead-datasets)
+- [Quantitative Results on Fail2Drive](#quantitative-results-on-fail2drive)
 - [Video Demo](#video-demo)
 - [Code](#code)
   - [BridgeDrive adaptation LEAD](#BridgeDrive-adaptation-LEAD) 
@@ -136,6 +138,132 @@ to LEAD. Notably, its success rate is 0.72% lower than that of LEAD, while its d
 0.22 higher. The evaluation indicates that BridgeDrive generalizes well across different training
 sets. Further improvements are expected through a more thorough investigation of anchor quantity,
 diffusion parameters, learning rate, training duration, and the speed control mechanism.
+
+## Quantitative Results on Fail2Drive
+
+[Fail2Drive](https://github.com/autonomousvision/fail2drive) provides a closed-loop generalization test using unseen long-tail scenarios within the CARLA Leaderboard 2 framework.
+
+- It features 200 short routes (219 m on average) through Town 13.
+
+- These routes cover 17 new scenario types, organized into four generalization categories (detailed in the table below).
+
+- Each route with a generalization challenge has a matching in-distribution control route (identical road layout and traffic flow), allowing the effect of the distribution shift to be measured in isolation.
+
+**Evaluation.** Follow the configuration of [LEAD](https://github.com/kesai-labs/lead) and evalutate via:
+
+```bash
+cd path_to_LEAD
+. scripts/eval_fail2drive_bridgedrive.sh
+```
+
+**Results.** Fail2Drive was evaluated (averaged over 3 random seeds) using this [model](https://huggingface.co/liushu-ethz/BridgeDrive). Overall, BridgeDrive outperformed other non diffusion-based methods, demonstrating its superior generalization capability. 
+
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Method</th>
+      <th colspan="1">Bench2Drive</th>
+      <th colspan="3">Fail2Drive In-Distribution</th>
+      <th colspan="3">Fail2Drive Generalization</th>
+    </tr>
+    <tr>
+      <th>DS ↑</th>
+      <th>DS ↑</th>
+      <th>SR(%) ↑</th>
+      <th>HM ↑</th>
+      <th>DS ↑</th>
+      <th>SR(%) ↑</th>
+      <th>HM ↑</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TCP</td>
+      <td align="center">59.9</td>
+      <td align="center">24.7</td>
+      <td align="center">39.1</td>
+      <td align="center">30.3</td>
+      <td align="center">24.5 <sub>(-0.8%)</sub></td>
+      <td align="center">31.4 <sub>(-19.7%)</sub></td>
+      <td align="center">27.5 <sub>(-9.1%)</sub></td>
+    </tr>
+    <tr>
+      <td>UniAD</td>
+      <td align="center">45.8</td>
+      <td align="center">47.5</td>
+      <td align="center">36.3</td>
+      <td align="center">41.2</td>
+      <td align="center">44.0 <sub>(-7.4%)</sub></td>
+      <td align="center">27.6 <sub>(-24.0%)</sub></td>
+      <td align="center">33.9 <sub>(-17.6%)</sub></td>
+    </tr>
+    <tr>
+      <td>Orion</td>
+      <td align="center">77.8</td>
+      <td align="center">53.0</td>
+      <td align="center">52.0</td>
+      <td align="center">52.5</td>
+      <td align="center">51.2 <sub>(-3.4%)</sub></td>
+      <td align="center">46.0 <sub>(-11.5%)</sub></td>
+      <td align="center">48.5 <sub>(-7.7%)</sub></td>
+    </tr>
+    <tr>
+      <td>HiP-AD</td>
+      <td align="center">86.8</td>
+      <td align="center">74.1</td>
+      <td align="center">70.7</td>
+      <td align="center">72.4</td>
+      <td align="center">67.1 <sub>(-9.4%)</sub></td>
+      <td align="center">56.7 <sub>(-19.8%)</sub></td>
+      <td align="center">61.5 <sub>(-15.1%)</sub></td>
+    </tr>
+    <tr>
+      <td>SimLingo</td>
+      <td align="center">85.1</td>
+      <td align="center">82.6</td>
+      <td align="center">79.3</td>
+      <td align="center">80.9</td>
+      <td align="center">71.7 <sub>(-13.2%)</sub></td>
+      <td align="center">55.0 <sub>(-30.6%)</sub></td>
+      <td align="center">62.2 <sub>(-23.1%)</sub></td>
+    </tr>
+    <tr>
+      <td>TFv5</td>
+      <td align="center">84.2</td>
+      <td align="center">83.3</td>
+      <td align="center">78.5</td>
+      <td align="center">80.8</td>
+      <td align="center">75.4 <sub>(-9.5%)</sub></td>
+      <td align="center">61.1 <sub>(-22.2%)</sub></td>
+      <td align="center">67.5 <sub>(-16.5%)</sub></td>
+    </tr>
+    <tr>
+      <td>TFv6</td>
+      <td align="center">95.2</td>
+      <td align="center">90.2</td>
+      <td align="center">93.3</td>
+      <td align="center">91.7</td>
+      <td align="center">79.5 <sub>(-11.9%)</sub></td>
+      <td align="center">70.7 <sub>(-24.2%)</sub></td>
+      <td align="center">74.8 <sub>(-18.4%)</sub></td>
+    </tr>
+    <tr>
+      <td><b>BridgeDrive (Ours)</b></td>
+      <td align="center"><b>96.3</b></td>
+      <td align="center"><b>91.6</b></td>
+      <td align="center"><b>95.0</b></td>
+      <td align="center"><b>93.3</b></td>
+      <td align="center"><b>81.9</b> <sub>(-10.5%)</sub></td>
+      <td align="center"><b>75.0</b> <sub>(-21.1%)</sub></td>
+      <td align="center"><b>78.3</b> <sub>(-16.0%)</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
 
 ## Video Demo
 

@@ -81,6 +81,7 @@ def copy_items_with_structure(item_paths, source_dir, dest_dir):
 
 items_to_transfer= [
     "3rd_party/Bench2Drive/leaderboard/leaderboard/leaderboard_evaluator_v2.py",
+    "3rd_party/leaderboard/leaderboard/leaderboard_evaluator_f2d.py",
     "anchor_utils",   
     "data/benchmark_routes/bench2drive_split/bench2drive_111.xml",
     "lead/inference/closed_loop_inference_bridgedrive.py", 
@@ -89,6 +90,7 @@ items_to_transfer= [
     "lead/inference/sensor_agent_bridgedrive.py",
     "lead/tfv6/diffusion_modules", 
     "lead/tfv6/planning_decoder_bridgedrive.py", 
+    "lead/tfv6/tfv5_planning_decoder.py",
     "lead/tfv6/tfv6_bridgedrive.py", 
     "lead/training/config_training.py",
     "lead/training/logger.py", 
@@ -97,6 +99,7 @@ items_to_transfer= [
     "lead/visualization/visualizer_bridgedrive.py",
     "scripts/posttrain_bridgedrive.sh",  
     "scripts/eval_bench2drive_bridgedrive.sh", 
+    "scripts/eval_fail2drive_bridgedrive.sh",
     "utils_file_transfer.py"
 ]
 
