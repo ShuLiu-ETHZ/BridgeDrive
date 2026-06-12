@@ -18,7 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
-* **` Jun. 12th, 2026`:** We update the BridgeDrive's adaptation to LEAD, supporting [Fail2Drive](https://github.com/autonomousvision/fail2drive) benchmark, for details please refer to [evaluation](#fail2drive-evaluation).
+* **` Jun. 12th, 2026`:** We update the BridgeDrive's adaptation to LEAD, supporting [Fail2Drive](https://github.com/autonomousvision/fail2drive) benchmark, for details please refer to [evaluation](#quantitative-results-on-fail2drive).
 * **` Apr. 15th, 2026`:** We release the BridgeDrive's adaptation to DiffusionDrive, enabling training and testing on Navsim datasets. 
 * **` Mar. 24th, 2026`:** We release the BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive). 
 * **` Mar. 09th, 2026`:** We release the initial version of code, along with documentation and training/evaluation scripts. 
@@ -149,7 +149,7 @@ diffusion parameters, learning rate, training duration, and the speed control me
 
 - Each route with a generalization challenge has a matching in-distribution control route (identical road layout and traffic flow), allowing the effect of the distribution shift to be measured in isolation.
 
-**Evaluation.** Follow the configuration of [LEAD](https://github.com/kesai-labs/lead) and evalutate via:
+**Evaluation.** Follow the configuration of [LEAD](https://github.com/kesai-labs/lead) (156afed46562884be77ec51f2b09aa60b7634c98) and [instruction](#BridgeDrive-adaptation-LEAD), and then evaluate via:
 
 ```bash
 cd path_to_LEAD
@@ -385,13 +385,13 @@ path_to_LEAD/data/lead_ckpt/tfv6
 #### 3. Training
 ```bash
 cd path_to_LEAD # with files from BridgeDrive
-./scripts/posttrain_bridgedrive.sh
+. scripts/posttrain_bridgedrive.sh
 ```
 
 #### 4. Inference
 ```bash
 cd path_to_LEAD
-./scripts/eval_bench2drive_bridgedrive.sh
+. scripts/eval_bench2drive_bridgedrive.sh
 ```
 
 ### BridgeDrive adaptation DiffusionDrive
@@ -426,13 +426,13 @@ Download the pretrained models instructed in Diffusiondrive.
 #### 3. Training
 ```bash
 cd path_to_DiffusionDrive # with files from BridgeDrive
-./run_train_BridgeDrive_k80_beta10.sh
+. run_train_BridgeDrive_k80_beta10.sh
 ```
 
 #### 4. Inference
 ```bash
 cd path_to_DiffusionDrive
-./run_main_testing_BridgeDrive_k80_beta10
+. run_main_testing_BridgeDrive_k80_beta10.sh
 ```
 
 
