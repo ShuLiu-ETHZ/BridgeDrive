@@ -89,9 +89,11 @@ The key algorithmic difference between BridgeDrive and DiffusionDrive is highlig
 
 ## Quantitative Results on PDM-Lite and LEAD datasets
 
-BridgeDrive, evaluated primarily on the PDM-Lite training dataset, achieves state-of-the-art performance on most metrics in the Bench2Drive benchmark.
+BridgeDrive is evaluated on the PDM-Lite and LEAD training dataset, and achieves state-of-the-art performance on most metrics in the Bench2Drive benchmark. 
 
-Comprehensive comparison between BridgeDrive and baselines. BridgeDrive prioritizes safety over Comfortness.
+As brief explanation, LEAD (Nguyen et al., 2026) is a recent work that minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. 
+
+
 | Method | Expert | Key technique | DS | SR(%) | Effi. | Comfort. |
 |--------|--------|---------------|-----|--------|--------|----------|
 | TCP-traj* | Think2Drive | CNN, MLP, GRU | 59.90 | 30.00 | 76.54 | 18.08 |
@@ -104,6 +106,9 @@ Comprehensive comparison between BridgeDrive and baselines. BridgeDrive prioriti
 | SimLingo | PDM-Lite | VLA | 85.07 | 67.27 | **259.23** | 33.67 |
 | TransFuser++ | PDM-Lite | Transformer | 84.21 | 67.27 | N/A | N/A |
 | **<span style="color:lightblue">BridgeDrive</span>** | PDM-Lite | Diffusion | **87.99 (+2.92)** | **74.99 (+7.72)** | 236.49 | 20.98 |
+|-------------------------| ------------- |----------------- |------------- |------------- |------------ |------------- |
+| TFv6 (Nguyen et al., 2026) | LEAD | Transformer | 95.2 ± 0.3 | 86.8 ± 0.7 | N/A | N/A |
+| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | Diffusion | **96.34** ± 0.55 | **89.25** ± 0.50 | 202.92 ± 3.27 | **23.24** ± 1.06 |
 
 Multi-ability evaluation results on Bench2Drive. BridgeDrive outperforms all baselines in all categories except for Give Way and Overtake.
 | Method | Merg. | Overtak. | Emer. Brake | Give Way | Traf. Sign | Mean |
@@ -116,13 +121,15 @@ Multi-ability evaluation results on Bench2Drive. BridgeDrive outperforms all bas
 | DiffusionDrive $^{\text{temp}}$ | 50.63 | 26.67 | 68.33 | 50.00 | 76.32 | 54.38 |
 | SimLingo | 54.01 | 57.04 | 88.33 | **53.33** | 82.45 | 67.03 |
 | TransFuser++ | 58.75 | 57.77 | 83.33 | 40.00 | 82.11 | 64.39 |
-| **<span style="color:lightblue">BridgeDrive</span>** | **69.92 (+11.17)** | 66.67 (-4.44) | **90.00 (+1.67)** | 50.00 (-3.33) | **89.47 (+7.02)** | **73.15 (+6.12)** |
-
+| **<span style="color:lightblue">BridgeDrive (PDM-Lite)</span>** | **69.92 (+11.17)** | 66.67 (-4.44) | **90.00 (+1.67)** | 50.00 (-3.33) | **89.47 (+7.02)** | **73.15 (+6.12)** |
+| **<span style="color:lightblue">BridgeDrive (LEAD)</span>**  | **76.25 (+17.50)** | **95.56 (+24.45)** | **96.67 (+8.34)** | 50.00 (-3.33) | **92.63 (+10.18)** | **82.22 (+15.19)** |
 <br>
 
-LEAD (Nguyen et al., 2026), a recent work, minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. The tables below present a preliminary evaluation of BridgeDrive on this new training dataset (as of 2026-03-07).
+<!-- |-------------------------| --------------- |------------ |------------- |------------ |------------ |------------- | -->
 
-| Method | Expert | DS | SR(%) | Effi. | Comfort |
+<!-- LEAD (Nguyen et al., 2026), a recent work, minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. The tables below present a preliminary evaluation of BridgeDrive on this new training dataset (as of 2026-03-07). -->
+
+<!-- | Method | Expert | DS | SR(%) | Effi. | Comfort |
 |--------|--------|-----|--------|--------|---------|
 | TFv6 (Nguyen et al., 2026) | LEAD | 95.2 ± 0.3 | 86.8 ± 0.7 | N/A | N/A |
 | **<span style="color:lightblue">BridgeDrive</span>** | PDM-Lite | 87.99 ± 0.67 | 74.99 ± 1.35 | **236.49** ± 2.32 | 20.98 ± 0.74 |
@@ -137,7 +144,7 @@ BridgeDrive achieves performance comparable
 to LEAD. Notably, its success rate is 0.72% lower than that of LEAD, while its driving score is
 0.22 higher. The evaluation indicates that BridgeDrive generalizes well across different training
 sets. Further improvements are expected through a more thorough investigation of anchor quantity,
-diffusion parameters, learning rate, training duration, and the speed control mechanism.
+diffusion parameters, learning rate, training duration, and the speed control mechanism. -->
 
 ## Quantitative Results on Fail2Drive
 
