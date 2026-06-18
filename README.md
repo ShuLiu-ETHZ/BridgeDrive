@@ -91,7 +91,7 @@ The key algorithmic difference between BridgeDrive and DiffusionDrive is highlig
 
 BridgeDrive is evaluated on the PDM-Lite and LEAD training dataset, and achieves state-of-the-art performance on most metrics in the Bench2Drive benchmark. 
 
-As brief explanation, LEAD (Nguyen et al., 2026) is a recent work that minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. 
+As brief explanation, [LEAD](https://github.com/kesai-labs/lead) (Nguyen et al., 2026) is a recent work that minimizes the generalization gap in end-to-end autonomous driving by introducing a novel expert policy and dataset designed to mitigate Learner-Expert Asymmetry in CARLA. 
 
 
 | Method | Expert | Key technique | DS | SR(%) | Effi. | Comfort. |
@@ -106,9 +106,9 @@ As brief explanation, LEAD (Nguyen et al., 2026) is a recent work that minimizes
 | SimLingo | PDM-Lite | VLA | 85.07 | 67.27 | **259.23** | 33.67 |
 | TransFuser++ | PDM-Lite | Transformer | 84.21 | 67.27 | N/A | N/A |
 | **<span style="color:lightblue">BridgeDrive</span>** | PDM-Lite | Diffusion | **87.99 (+2.92)** | **74.99 (+7.72)** | 236.49 | 20.98 |
-|-------------------------| ------------- |----------------- |------------- |------------- |------------ |------------- |
-| TFv6 (Nguyen et al., 2026) | LEAD | Transformer | 95.2 ± 0.3 | 86.8 ± 0.7 | N/A | N/A |
-| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | Diffusion | **96.34** ± 0.55 | **89.25** ± 0.50 | 202.92 ± 3.27 | **23.24** ± 1.06 |
+|-----------------| ------------- |---------------- |------------- |------------- |------------ |------------- |
+| [TFv6](https://github.com/kesai-labs/lead) | LEAD | Transformer | 95.2 ± 0.3 | 86.8 ± 0.7 | N/A | N/A |
+| **<span style="color:lightblue">BridgeDrive</span>** | LEAD | Diffusion | **96.34** ± 0.55 | **89.25** ± 0.50 | 202.92 | 23.24 |
 
 Multi-ability evaluation results on Bench2Drive. BridgeDrive outperforms all baselines in all categories except for Give Way and Overtake.
 | Method | Merg. | Overtak. | Emer. Brake | Give Way | Traf. Sign | Mean |
