@@ -18,6 +18,7 @@ Accepted to ICLR 2026!
 </div>
 
 ## News
+* **` Aug. 22nd, 2026`:** We release another BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive/blob/main/model_BridgeDrive_m2_k60_0030.pth) that yield better empirical performance. 
 * **` Jun. 12th, 2026`:** We update the BridgeDrive's adaptation to LEAD, supporting [Fail2Drive](https://github.com/autonomousvision/fail2drive) benchmark, for details please refer to [evaluation](#quantitative-results-on-fail2drive).
 * **` Apr. 15th, 2026`:** We release the BridgeDrive's adaptation to DiffusionDrive, enabling training and testing on Navsim datasets. 
 * **` Mar. 24th, 2026`:** We release the BridgeDrive [model](https://huggingface.co/liushu-ethz/BridgeDrive). 
